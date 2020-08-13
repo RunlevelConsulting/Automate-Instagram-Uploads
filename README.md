@@ -32,7 +32,7 @@ I personally chose not to bake the Python script into the image, preferring to c
 >        # sudo wget -q "https://raw.githubusercontent.com/RunlevelConsulting/Automate-Instagram-Uploads/master/IGLoginAndPost.py" -O /root/Desktop/IGLoginAndPost.py;
 > This method will die though if Instagram issues a DMCA against this repo.
 
-<br/><br/>
+<br/><br/><br/>
 
 Uploading to Instagram
 ----------------
