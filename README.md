@@ -62,6 +62,8 @@ Important Stuff To Note!
 ### Local Image Uploads
 If copying a locally-held image into the Docker container, it **must** be placed into the **/home/ubuntu/Desktop/** directory inside the container and it **must** be the only image in that directory. This is due to what the cursor macro expects.
 
+### User Agents
+The Python script sets a fake User Agent for Selenium. Instagram may start to get wise that people are using this tool and bad things could happen, one method to avoid this would be to modify the **user_agent** variable in the script to another mobile phone user agent. See [alternatives](https://deviceatlas.com/blog/mobile-browser-user-agent-strings).
 
 ### Not Working?
 If no image is being uploaded, ditch your container and  run:
