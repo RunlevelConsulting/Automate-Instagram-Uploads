@@ -26,13 +26,7 @@ Installation
         # sudo docker cp IGLoginAndPost.py igloginandpost:/root/Desktop/IGLoginAndPost.py
 
 I personally chose not to bake the Python script into the image, preferring to copy locally/wget remote it in. Feel free to change that for your system.
-
-> **Note:** Prepend the following into the 'docker exec' command below if you wish to wget from remote:
-> 
->        # sudo wget -q "https://raw.githubusercontent.com/RunlevelConsulting/Automate-Instagram-Uploads/master/IGLoginAndPost.py" -O /root/Desktop/IGLoginAndPost.py;
-> This method will die though if Instagram issues a DMCA against this repo.
-
-<br/>
+<br/><br/>
 
 Uploading to Instagram
 ----------------

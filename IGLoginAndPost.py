@@ -26,7 +26,6 @@ f.write(actiona)
 f.close()
 
 
-
 ################################
 # FIREFOX
 ################################
@@ -49,7 +48,7 @@ field = driver.find_element_by_css_selector("input[type='text']")
 field.send_keys(username)
 field = driver.find_element_by_css_selector("input[type='password']")
 field.send_keys(password)
-time.sleep(2)
+time.sleep(1)
 button=driver.find_elements_by_xpath("//*[contains(text(), 'Log In')]")
 button[0].click()
 
@@ -80,12 +79,12 @@ if len(description) > 0:
   field = driver.find_elements_by_tag_name('textarea')[0]
   field.click()
   field.send_keys(description)
+  time.sleep(1)
 
 
 ################################
 # POST!
 ################################
-time.sleep(3)
 button=driver.find_elements_by_xpath("//*[contains(text(), 'Share')]")
 button[1].click()
 time.sleep(2)
