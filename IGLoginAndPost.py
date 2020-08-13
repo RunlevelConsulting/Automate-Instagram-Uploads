@@ -26,7 +26,6 @@ f.write(actiona)
 f.close()
 
 
-
 ################################
 # FIREFOX
 ################################
@@ -80,12 +79,12 @@ if len(description) > 0:
   field = driver.find_elements_by_tag_name('textarea')[0]
   field.click()
   field.send_keys(description)
+  time.sleep(3)
 
 
 ################################
 # POST!
 ################################
-time.sleep(3)
 button=driver.find_elements_by_xpath("//*[contains(text(), 'Share')]")
 button[1].click()
 time.sleep(2)
