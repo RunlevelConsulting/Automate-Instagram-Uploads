@@ -95,4 +95,7 @@ time.sleep(2)
 # SHUT IT DOWN
 ################################
 
+# Remove all images
+os.system('rm -f /home/ubuntu/Desktop/*.jpg')
+
 driver.quit()
