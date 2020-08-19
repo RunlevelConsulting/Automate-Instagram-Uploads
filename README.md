@@ -24,7 +24,7 @@ Installation
         # sudo docker build --tag igloginandpost:1.0 .
         # sudo docker run -d --name igloginandpost igloginandpost:1.0
 
-<br/><br/>
+<br/>
 
 Uploading to Instagram
 ----------------
