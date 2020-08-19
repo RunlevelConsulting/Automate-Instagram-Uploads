@@ -1,5 +1,7 @@
 FROM dorowu/ubuntu-desktop-lxde-vnc:bionic
 
+COPY IGLoginAndPost.py /root/Desktop/IGLoginAndPost.py
+
 RUN mkdir -p /home/ubuntu/Desktop
 RUN apt-get update && apt-get install -y python-pip wget actiona
 RUN pip install selenium

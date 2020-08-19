@@ -23,9 +23,7 @@ Installation
         # cd Automate-Instagram-Uploads/
         # sudo docker build --tag igloginandpost:1.0 .
         # sudo docker run -d --name igloginandpost igloginandpost:1.0
-        # sudo docker cp IGLoginAndPost.py igloginandpost:/root/Desktop/IGLoginAndPost.py
 
-I personally chose not to bake the Python script into the image, preferring to copy locally/wget remote it in. Feel free to change that for your system.
 <br/><br/>
 
 Uploading to Instagram
