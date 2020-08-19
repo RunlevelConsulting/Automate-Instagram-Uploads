@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+     This is the XML for actiona. Actiona automates cursor movements, clicks and much more.
+     In this case it's used to select the Instagram image. 
+     Because of the way the browser window is positioned, there should be no need to modify this file
+-->
+<scriptfile>
+  <settings program="actiona" version="3.9.2" scriptVersion="1.1.0" os="GNU/Linux"/>
+  <actions>
+    <action name="ActionPause" version="1.0.0"/>
+    <action name="ActionClick" version="1.0.0"/>
+  </actions>
+  <parameters/>
+  <resources/>
+  <script pauseBefore="0" pauseAfter="0">
+    <action name="ActionClick">
+      <exception id="2" action="1" line=""/>
+      <exception id="1" action="0" line=""/>
+      <exception id="0" action="0" line=""/>
+      <exception id="33" action="0" line=""/>
+      <exception id="32" action="0" line=""/>
+      <parameter name="action">
+        <subParameter name="value" code="0">pressRelease</subParameter>
+      </parameter>
+      <parameter name="amount">
+        <subParameter name="value" code="0">1</subParameter>
+      </parameter>
+      <parameter name="positionOffset">
+        <subParameter name="value" code="0"/>
+        <subParameter name="unit" code="0">0</subParameter>
+      </parameter>
+      <parameter name="position">
+        <subParameter name="value" code="0">207:636</subParameter>
+        <subParameter name="unit" code="0">0</subParameter>
+      </parameter>
+      <parameter name="button">
+        <subParameter name="value" code="0">left</subParameter>
+      </parameter>
+    </action>
+    <action name="ActionPause">
+      <exception id="2" action="1" line=""/>
+      <exception id="1" action="0" line=""/>
+      <exception id="0" action="0" line=""/>
+      <parameter name="duration">
+        <subParameter name="value" code="0">1</subParameter>
+      </parameter>
+      <parameter name="unit">
+        <subParameter name="value" code="0">seconds</subParameter>
+      </parameter>
+    </action>
+    <action name="ActionClick">
+      <exception id="2" action="1" line=""/>
+      <exception id="1" action="0" line=""/>
+      <exception id="0" action="0" line=""/>
+      <exception id="33" action="0" line=""/>
+      <exception id="32" action="0" line=""/>
+      <parameter name="action">
+        <subParameter name="value" code="0">pressRelease</subParameter>
+      </parameter>
+      <parameter name="amount">
+        <subParameter name="value" code="0">2</subParameter>
+      </parameter>
+      <parameter name="positionOffset">
+        <subParameter name="value" code="0"/>
+        <subParameter name="unit" code="0">0</subParameter>
+      </parameter>
+      <parameter name="position">
+        <subParameter name="value" code="0">233:107</subParameter>
+        <subParameter name="unit" code="0">0</subParameter>
+      </parameter>
+      <parameter name="button">
+        <subParameter name="value" code="0">left</subParameter>
+      </parameter>
+    </action>
+  </script>
+</scriptfile>
+
