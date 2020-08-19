@@ -21,14 +21,14 @@ Installation
 
         # git clone https://github.com/RunlevelConsulting/Automate-Instagram-Uploads.git
         # cd Automate-Instagram-Uploads/
-        # sudo docker build --tag igloginandpost:1.0 .
-        # sudo docker run -d -v $(pwd):/root/Desktop/:ro --name igloginandpost igloginandpost:1.0
+        # sudo docker build --tag instagram-post-img .
+        # sudo docker run -d -v $(pwd):/root/Desktop/:ro --name instagram-post instagram-post-img
 
 
 Uploading to Instagram
 ----------------
 
-The photo upload is managed by a script named **IGLoginAndPost.py**, it has 4 arguments:
+The photo upload is managed by a script named **InstagramPost.py**, it has 4 arguments:
 
  1. Your Instagram username
  2. Your Instagram password
@@ -36,11 +36,11 @@ The photo upload is managed by a script named **IGLoginAndPost.py**, it has 4 ar
  4. The caption you want to go with the image
 
 ### Method 1: Upload Image From Web
-        # sudo docker exec -d -e DISPLAY=:1 -i igloginandpost bash -c 'python IGLoginAndPost.py "<Insta Username>" "<Insta Password>" "https://example.com/link/to/image.jpg" "<Your Upload Caption>"'
+        # sudo docker exec -d -e DISPLAY=:1 -i instagram-post bash -c 'python InstagramPost.py "<Insta Username>" "<Insta Password>" "https://example.com/link/to/image.jpg" "<Your Upload Caption>"'
 
 ### Method 2: Upload Local Image
-        # sudo docker cp /path/to/MyImage.jpg igloginandpost:/home/ubuntu/Desktop/pic.jpg
-        # sudo docker exec -d -e DISPLAY=:1 -i igloginandpost bash -c 'python IGLoginAndPost.py "<Insta Username>" "<Insta Password>" "" "<Your Upload Caption>"'
+        # sudo docker cp /path/to/MyImage.jpg instagram-post:/home/ubuntu/Desktop/pic.jpg
+        # sudo docker exec -d -e DISPLAY=:1 -i instagram-post bash -c 'python InstagramPost.py "<Insta Username>" "<Insta Password>" "" "<Your Upload Caption>"'
 
 Wait around **1 minute** after you run this command and it should appear as an upload.
 <br/><br/>
@@ -62,7 +62,7 @@ This won't work with it switched on.
 ### Not Working?
 If no image is being uploaded, ditch your container and  run:
 
- 1.     # sudo docker run -d -v $(pwd):/root/Desktop/:ro --name igloginandpost -p 6080:80 -p 5900:5900 igloginandpost:1.0
- 2. Browse to: [http://127.0.0.1:6080/](http://127.0.0.1:6080/) to see the container GUI
- 3.     # sudo docker exec -e DISPLAY=:1 -i igloginandpost bash -c 'python /root/Desktop/IGLoginAndPost.py "<Insta Username>" "<Insta Password>" "" "<Your upload caption>"' 
-This method will allow you to watch the Selenium in action and hopefully work out what's going wrong. It'll also alert you in your terminal if your 'docker exec' command is malformed.
+ 1.     # sudo docker run -d -v $(pwd):/root/Desktop/:ro --name instagram-post -p 6080:80 -p 5900:5900 instagram-post-img
+ 2. Browse to: [http://127.0.0.1:6080/](http://127.0.0.1:6080/) to see the container GUI.
+
+This method will provide a GUI to allow you to watch the Selenium in action and hopefully work out what's going wrong. It'll also alert you in your terminal if your ```docker exec``` command is malformed.
