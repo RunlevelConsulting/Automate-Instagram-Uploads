@@ -22,9 +22,8 @@ Installation
         # git clone https://github.com/RunlevelConsulting/Automate-Instagram-Uploads.git
         # cd Automate-Instagram-Uploads/
         # sudo docker build --tag igloginandpost:1.0 .
-        # sudo docker run -d --name igloginandpost igloginandpost:1.0
+        # sudo docker run -d -v $(pwd):/root/Desktop/:ro --name igloginandpost igloginandpost:1.0
 
-<br/><br/>
 
 Uploading to Instagram
 ----------------
@@ -37,11 +36,11 @@ The photo upload is managed by a script named **IGLoginAndPost.py**, it has 4 ar
  4. The caption you want to go with the image
 
 ### Method 1: Upload Image From Web
-        # sudo docker exec -d -e DISPLAY=:1 -i igloginandpost bash -c 'sudo python /root/Desktop/IGLoginAndPost.py "<Insta Username>" "<Insta Password>" "https://example.com/link/to/image.jpg" "<Your Upload Caption>"'
+        # sudo docker exec -d -e DISPLAY=:1 -i igloginandpost bash -c 'sudo python IGLoginAndPost.py "<Insta Username>" "<Insta Password>" "https://example.com/link/to/image.jpg" "<Your Upload Caption>"'
 
 ### Method 2: Upload Local Image
         # sudo docker cp /path/to/MyImage.jpg igloginandpost:/home/ubuntu/Desktop/pic.jpg
-        # sudo docker exec -d -e DISPLAY=:1 -i igloginandpost bash -c 'sudo python /root/Desktop/IGLoginAndPost.py "<Insta Username>" "<Insta Password>" "" "<Your Upload Caption>"'
+        # sudo docker exec -d -e DISPLAY=:1 -i igloginandpost bash -c 'sudo python IGLoginAndPost.py "<Insta Username>" "<Insta Password>" "" "<Your Upload Caption>"'
 
 Wait around **1 minute** after you run this command and it should appear as an upload.
 <br/><br/>
