@@ -51,7 +51,7 @@ Wait around **1 minute** after you run this command and it should appear as an u
 Important Stuff To Note!
 ------
 ### Single & Double Quotes
-**Do not use single or double quotes in your caption.** Bash parses the 'docker exec' command badly, I did try escaping but it didn't seem to cooperate. I didn't really dwell on it, but if you get it working, let me know. I'd recommend grave accents (`) as an alternative.
+**Do not use single or double quotes in your caption.** Bash parses the 'docker exec' command badly, I did try escaping but it didn't seem to cooperate. I didn't really dwell on it, but if you get it working, let me know.
 
 ### Local Image Uploads
 If copying a locally-held image into the Docker container, it **must** be placed into the **/home/ubuntu/Desktop/** directory inside the container and it **must** be the only image in that directory. This is due to what the cursor macro expects.
