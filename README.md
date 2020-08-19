@@ -62,7 +62,7 @@ This won't work with it switched on.
 ### Not Working?
 If no image is being uploaded, ditch your container and  run:
 
- 1.     # sudo docker run -d --name igloginandpost -p 6080:80 -p 5900:5900 igloginandpost:1.0 
+ 1.     # sudo docker run -d -v $(pwd):/root/Desktop/:ro --name igloginandpost -p 6080:80 -p 5900:5900 igloginandpost:1.0
  2. Browse to: [http://127.0.0.1:6080/](http://127.0.0.1:6080/) to see the container GUI
  3.     # sudo docker exec -e DISPLAY=:1 -i igloginandpost bash -c 'sudo python /root/Desktop/IGLoginAndPost.py "<Insta Username>" "<Insta Password>" "" "<Your upload caption>"' 
 This method will allow you to watch the Selenium in action and hopefully work out what's going wrong. It'll also alert you in your terminal if your 'docker exec' command is malformed.
