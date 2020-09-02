@@ -33,22 +33,22 @@ driver.set_window_position(0,0)
 # LOGIN
 ################################
 driver.get('https://www.instagram.com/accounts/login/?source=auth_switcher')
-time.sleep(4)
+time.sleep(8)
 
 field = driver.find_element_by_css_selector("input[type='text']")
 field.send_keys(username)
 field = driver.find_element_by_css_selector("input[type='password']")
 field.send_keys(password)
-time.sleep(1)
+time.sleep(2)
 button=driver.find_elements_by_xpath("//*[contains(text(), 'Log In')]")
 button[0].click()
 
-time.sleep(5)
+time.sleep(10)
 button=driver.find_elements_by_xpath("//*[contains(text(), 'Not Now')]")
 if len(button) > 0:
     button[0].click()
 
-time.sleep(5)
+time.sleep(10)
 button=driver.find_elements_by_xpath("//*[contains(text(), 'Cancel')]")
 if len(button) > 0:
     button[0].click()
@@ -57,10 +57,10 @@ if len(button) > 0:
 ################################
 # SELECT IMAGE
 ################################
-os.system('timeout 8 actiona -e ' + root_cwd + '/selectImage.ascr')
+os.system('timeout 30 actiona -e ' + root_cwd + '/selectImage.ascr')
 button=driver.find_elements_by_xpath("//*[contains(text(), 'Next')]")
 button[0].click()
-time.sleep(3)
+time.sleep(6)
 
 
 ################################
@@ -70,7 +70,7 @@ if len(description) > 0:
   field = driver.find_elements_by_tag_name('textarea')[0]
   field.click()
   field.send_keys(description)
-  time.sleep(1)
+  time.sleep(2)
 
 
 ################################
@@ -78,7 +78,7 @@ if len(description) > 0:
 ################################
 button=driver.find_elements_by_xpath("//*[contains(text(), 'Share')]")
 button[1].click()
-time.sleep(2)
+time.sleep(5)
 
 
 ################################
