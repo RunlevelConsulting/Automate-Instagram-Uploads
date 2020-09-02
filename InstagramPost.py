@@ -57,10 +57,10 @@ if len(button) > 0:
 ################################
 # SELECT IMAGE
 ################################
-os.system('timeout 25 actiona -e ' + root_cwd + '/selectImage.ascr')
+os.system('actiona -e ' + root_cwd + '/selectImage.ascr')
 button=driver.find_elements_by_xpath("//*[contains(text(), 'Next')]")
 button[0].click()
-time.sleep(6)
+time.sleep(10)
 
 
 ################################
