@@ -1,6 +1,10 @@
 FROM dorowu/ubuntu-desktop-lxde-vnc:bionic
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV SCREEN_WIDTH=1920
+ENV SCREEN_HEIGHT=1080
+ENV SCREEN_DEPTH=24
+ENV SCREEN_DPI=74
 
 RUN mkdir -p /home/ubuntu/Desktop
 RUN apt-get update && apt-get install -y python-pip wget actiona
