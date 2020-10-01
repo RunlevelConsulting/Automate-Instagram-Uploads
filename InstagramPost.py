@@ -29,19 +29,51 @@ driver.set_window_size(360,640)
 driver.set_window_position(0,0)
 
 
+# adding feature to make use of cookies
+def save_cookie(driver):
+    with open("cookie", 'wb') as filehandler:
+        pickle.dump(driver.get_cookies(), filehandler)
+        
+def load_cookie(driver):
+    try:
+         with open("cookie", 'rb') as cookiesfile:
+             cookies = pickle.load(cookiesfile)
+             for cookie in cookies:
+                 print(cookie)
+                 driver.add_cookie(cookie)
+    except:
+        print("Cookies Doesn't Exist Generating")
 ################################
 # LOGIN
 ################################
-driver.get('https://www.instagram.com/accounts/login/?source=auth_switcher')
-time.sleep(8)
+def login(driver, username , password):
+        time.sleep(2.5)
+        field = driver.find_element_by_css_selector("input[type='text']")
+        field.send_keys(username)
+        time.sleep(2.3)
+        field = driver.find_element_by_css_selector("input[type='password']")
+        field.send_keys(password)
+        time.sleep(2.2)
+        button=driver.find_elements_by_xpath("//*[contains(text(), 'Log In')]")
+        button[0].click()
+        time.sleep(0.3)
+        save_cookie(driver)
+        time.sleep(0.3)
+        if(driver.current_url=="https://www.instagram.com/"):
+            print("Login Successfull adding cookie")
+            save_cookie(driver)
+        else:
+            print("Something occured hence couldn't login")
+        time.sleep(1)
 
-field = driver.find_element_by_css_selector("input[type='text']")
-field.send_keys(username)
-field = driver.find_element_by_css_selector("input[type='password']")
-field.send_keys(password)
-time.sleep(2)
-button=driver.find_elements_by_xpath("//*[contains(text(), 'Log In')]")
-button[0].click()
+
+
+driver.get('https://www.instagram.com/accounts/login/?source=auth_switcher')
+load_cookie(driver)
+if(driver.current_url!="https://www.instagram.com/"):
+  print("Couldnt load via cookies Trying to Log in Using Credentials ")
+  login(driver,username, password)
+
 
 time.sleep(10)
 button=driver.find_elements_by_xpath("//*[contains(text(), 'Not Now')]")
